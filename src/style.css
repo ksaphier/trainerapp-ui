@@ -1,0 +1,43 @@
+:root {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --dark-color: #1c1c1c;
+  --light-color: #e8e8e8;
+}
+
+.light-theme {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  --back-color: var(--light-color);
+  --text-color: var(--dark-color);
+}
+
+.dark-theme {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  --back-color: var(--dark-color);
+  --text-color: var(--light-color);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}

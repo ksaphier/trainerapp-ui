@@ -1,0 +1,60 @@
+<template>
+  <div class="dropdown-container">
+    <a-dropdown
+      :open="visible"
+      @openChange="handleVisibleChange"
+      trigger="click"
+    >
+      <template #overlay>
+        <a-menu>
+          <a-menu-item>
+            <ThemeToggler
+              :activeTheme="activeTheme"
+              :toggleTheme="toggleTheme"
+            />
+          </a-menu-item>
+          <a-menu-item>
+            <router-link to="/" @click.native="handleClick"> Home </router-link>
+          </a-menu-item>
+          <a-menu-item>
+            <router-link to="/workouts" @click.native="handleClick">
+              Workouts
+            </router-link>
+          </a-menu-item>
+        </a-menu>
+      </template>
+      <a-button shape="circle" @click="visible = !visible">
+        <MenuOutlined v-if="visible" />
+        <MoreOutlined v-else />
+      </a-button>
+    </a-dropdown>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, inject } from "vue";
+import { MenuOutlined, MoreOutlined } from "@ant-design/icons-vue";
+import ThemeToggler from "./ThemeToggler.vue";
+
+const toggleTheme = inject("toggleTheme");
+const activeTheme = inject("activeTheme");
+
+const visible = ref(false);
+
+const handleVisibleChange = (val: boolean) => {
+  visible.value = val;
+};
+
+const handleClick = (event: { preventDefault: () => void }) => {
+  event.preventDefault();
+};
+</script>
+
+<style scoped>
+.dropdown-container {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+</style>
