@@ -7,7 +7,10 @@ export interface Exercise {
   id: string;
   title: string;
   description: string;
-  workoutId: string;
+  series: number;
+  reps: number;
+  rest: number;
+  weight: number;
 }
 export interface CurrentWorkout extends Workout {
   exercises: Exercise[];

@@ -1,0 +1,34 @@
+{
+  "exercises": [
+    {
+      "id": "1",
+      "title": "Squat",
+      "description": "This is a squat exercise"
+    },
+    {
+      "id": "2",
+      "title": "Lunge",
+      "description": "The lunge is a dynamic lower-body exercise that enhances strength, balance, and flexibility. Starting in a split stance, the exerciser lowers their body until the back knee nearly touches the floor, with the front thigh parallel to the ground, ensuring even weight distribution between both legs. The movement concludes by pushing through the heel of the front foot to return to the starting position. This exercise targets the quadriceps, hamstrings, glutes, and core, making it ideal for building muscle and improving posture."
+    },
+    {
+      "id": "3",
+      "title": "Bicep Curl",
+      "description": "This is a bicep curl exercise"
+    },
+    {
+      "id": "4",
+      "title": "Tricep Dip",
+      "description": "This is a tricep dip exercise"
+    },
+    {
+      "id": "5",
+      "title": "Push Up",
+      "description": "This is a push up exercise"
+    },
+    {
+      "id": "6",
+      "title": "Pull Up",
+      "description": "This is a pull up exercise"
+    }
+  ]
+}

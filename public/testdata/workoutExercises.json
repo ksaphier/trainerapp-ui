@@ -1,28 +1,52 @@
 {
   "workoutExercises": [
     {
-      "id": "1",
-      "title": "Squat",
-      "description": "This is a squat exercise",
-      "workoutId": "1"
+      "workoutId": "1",
+      "exerciseId": "1",
+      "series": 4,
+      "reps": 8,
+      "restTime": 90,
+      "weight": 20
     },
     {
-      "id": "2",
-      "title": "Lunge",
-      "description": "This is a lunge exercise",
-      "workoutId": "1"
+      "workoutId": "1",
+      "exerciseId": "2",
+      "series": 4,
+      "reps": 8,
+      "restTime": 90,
+      "weight": 10000
     },
     {
-      "id": "3",
-      "title": "Bicep Curl",
-      "description": "This is a bicep curl exercise",
-      "workoutId": "2"
+      "workoutId": "2",
+      "exerciseId": "3",
+      "series": 3,
+      "reps": 10,
+      "restTime": 60,
+      "weight": 20
     },
     {
-      "id": "4",
-      "title": "Tricep Dip",
-      "description": "This is a tricep dip exercise",
-      "workoutId": "2"
+      "workoutId": "2",
+      "exerciseId": "4",
+      "series": 3,
+      "reps": 10,
+      "restTime": 60,
+      "weight": 20
+    },
+    {
+      "workoutId": "2",
+      "exerciseId": "5",
+      "series": 3,
+      "reps": 10,
+      "restTime": 60,
+      "weight": 20
+    },
+    {
+      "workoutId": "2",
+      "exerciseId": "6",
+      "series": 3,
+      "reps": 10,
+      "restTime": 60,
+      "weight": 20
     }
   ]
 }
