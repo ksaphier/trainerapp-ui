@@ -1,0 +1,28 @@
+{
+  "workoutExercises": [
+    {
+      "id": "1",
+      "title": "Squat",
+      "description": "This is a squat exercise",
+      "workoutId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Lunge",
+      "description": "This is a lunge exercise",
+      "workoutId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Bicep Curl",
+      "description": "This is a bicep curl exercise",
+      "workoutId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Tricep Dip",
+      "description": "This is a tricep dip exercise",
+      "workoutId": "2"
+    }
+  ]
+}

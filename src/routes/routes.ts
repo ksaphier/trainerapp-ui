@@ -9,6 +9,11 @@ const routes = [
     name: "Workouts",
     component: () => import("../views/Workouts.vue"),
   },
+  {
+    path: "/workout/:id",
+    name: "WorkoutDetails",
+    component: () => import("../views/WorkoutDetails.vue"),
+  },
 ];
 
 export default routes;

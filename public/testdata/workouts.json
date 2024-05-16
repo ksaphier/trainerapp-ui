@@ -1,0 +1,14 @@
+{
+  "workouts": [
+    {
+      "id": "1",
+      "title": "Leg Workout",
+      "description": "This is a leg workout"
+    },
+    {
+      "id": "2",
+      "title": "Arm Workout",
+      "description": "This is an arm workout"
+    }
+  ]
+}
