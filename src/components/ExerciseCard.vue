@@ -43,7 +43,7 @@ defineProps({
   description: { type: String, default: "Description" },
   series: { type: Number, default: 4 },
   reps: { type: Number, default: 8 },
-  rest: { type: Number, default: 90 },
+  rest: { type: Number, default: 903 },
   weight: { type: Number, default: 60 },
 });
 

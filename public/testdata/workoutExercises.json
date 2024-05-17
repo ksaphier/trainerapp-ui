@@ -1,52 +1,52 @@
 {
   "workoutExercises": [
     {
-      "workoutId": "1",
-      "exerciseId": "1",
-      "series": 4,
+      "workoutId": "2",
+      "exerciseId": "001",
+      "series": 5,
       "reps": 8,
-      "restTime": 90,
-      "weight": 20
+      "rest": 90,
+      "weight": 34
     },
     {
-      "workoutId": "1",
-      "exerciseId": "2",
-      "series": 4,
+      "workoutId": "2",
+      "exerciseId": "002",
+      "series": 5,
       "reps": 8,
-      "restTime": 90,
-      "weight": 10000
+      "rest": 90,
+      "weight": 11.3
     },
     {
       "workoutId": "2",
-      "exerciseId": "3",
-      "series": 3,
-      "reps": 10,
-      "restTime": 60,
-      "weight": 20
+      "exerciseId": "003",
+      "series": 5,
+      "reps": 12,
+      "rest": 90,
+      "weight": 4.5
     },
     {
       "workoutId": "2",
-      "exerciseId": "4",
-      "series": 3,
-      "reps": 10,
-      "restTime": 60,
-      "weight": 20
+      "exerciseId": "004",
+      "series": 5,
+      "reps": 8,
+      "rest": 90,
+      "weight": 13.6
     },
     {
       "workoutId": "2",
-      "exerciseId": "5",
-      "series": 3,
+      "exerciseId": "005",
+      "series": 5,
       "reps": 10,
-      "restTime": 60,
-      "weight": 20
+      "rest": 90,
+      "weight": 18.1
     },
     {
       "workoutId": "2",
-      "exerciseId": "6",
-      "series": 3,
-      "reps": 10,
-      "restTime": 60,
-      "weight": 20
+      "exerciseId": "006",
+      "series": 5,
+      "reps": 6,
+      "rest": 90,
+      "weight": 70
     }
   ]
 }

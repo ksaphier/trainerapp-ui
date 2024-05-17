@@ -39,7 +39,7 @@ export const useWorkoutStore = defineStore("workout", () => {
             ...exercise,
             series: workoutExercise.series,
             reps: workoutExercise.reps,
-            restTime: workoutExercise.restTime,
+            rest: workoutExercise.rest,
             weight: workoutExercise.weight,
           };
         });

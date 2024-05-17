@@ -1,34 +1,34 @@
 {
   "exercises": [
     {
-      "id": "1",
-      "title": "Squat",
-      "description": "This is a squat exercise"
+      "id": "001",
+      "title": "Neutral Grip Pull-Ups",
+      "description": "Neutral Grip Pull-Ups focus on the upper body, engaging the forearms, biceps, and back muscles. This exercise is performed using parallel grips on a pull-up bar, which reduces wrist strain and targets the forearm muscles more effectively."
     },
     {
-      "id": "2",
-      "title": "Lunge",
-      "description": "The lunge is a dynamic lower-body exercise that enhances strength, balance, and flexibility. Starting in a split stance, the exerciser lowers their body until the back knee nearly touches the floor, with the front thigh parallel to the ground, ensuring even weight distribution between both legs. The movement concludes by pushing through the heel of the front foot to return to the starting position. This exercise targets the quadriceps, hamstrings, glutes, and core, making it ideal for building muscle and improving posture."
+      "id": "002",
+      "title": "Zottman Curls",
+      "description": "Zottman Curls are effective for working both the biceps and forearms. The exercise involves a regular bicep curl followed by a wrist rotation at the top of the movement, switching from a palm-up to a palm-down position before lowering the weights."
     },
     {
-      "id": "3",
-      "title": "Bicep Curl",
-      "description": "This is a bicep curl exercise"
+      "id": "003",
+      "title": "Reverse Curl",
+      "description": "The Reverse Curl primarily targets the brachioradialis, a muscle of the forearm, while also engaging the biceps. It is performed with an overhand grip, which shifts the workload from the biceps to the forearms."
     },
     {
-      "id": "4",
-      "title": "Tricep Dip",
-      "description": "This is a tricep dip exercise"
+      "id": "004",
+      "title": "Hammer Curls",
+      "description": "Hammer Curls focus on the biceps and the forearm's brachioradialis muscle. The dumbbells are lifted with the thumbs pointing upwards, resembling a hammer grip, which helps in muscle development on the outer side of the arm."
     },
     {
-      "id": "5",
-      "title": "Push Up",
-      "description": "This is a push up exercise"
+      "id": "005",
+      "title": "Tricep Rope Extension",
+      "description": "This exercise targets the triceps muscles. It involves using a rope attachment on a cable machine, pulling the rope downward by extending the arms and focusing on isolating the triceps."
     },
     {
-      "id": "6",
-      "title": "Pull Up",
-      "description": "This is a pull up exercise"
+      "id": "006",
+      "title": "Dips",
+      "description": "Dips are a compound push exercise effective in targeting the chest, shoulders, and triceps. The movement starts by suspending the body between parallel bars or rings, then lowering and raising the body using arm strength."
     }
   ]
 }
