@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import ThemeToggleButton from "./ThemeToggleButton.vue";
+import { inject } from "vue";
+import ThemeToggler from "../components/ThemeToggler.vue";
+const toggleTheme = inject("toggleTheme");
+const activeTheme = inject("activeTheme");
 </script>
 <template>
   <div class="navbar">
@@ -11,7 +14,7 @@ import ThemeToggleButton from "./ThemeToggleButton.vue";
         <a-button shape="round"> Workouts </a-button>
       </router-link>
     </div>
-    <ThemeToggleButton />
+    <ThemeToggler :activeTheme="activeTheme" :toggleTheme="toggleTheme" />
   </div>
 </template>
 <style scoped>
