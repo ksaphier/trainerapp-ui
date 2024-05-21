@@ -4,6 +4,8 @@
       :open="visible"
       @openChange="handleVisibleChange"
       trigger="click"
+      placement="topLeft"
+      overlay-class="overlay"
     >
       <template #overlay>
         <a-menu>
@@ -23,7 +25,11 @@
           </a-menu-item>
         </a-menu>
       </template>
-      <a-button shape="circle" @click="visible = !visible">
+      <a-button
+        class="dropdown-button"
+        shape="circle"
+        @click="visible = !visible"
+      >
         <MenuOutlined v-if="visible" />
         <MoreOutlined v-else />
       </a-button>
@@ -56,5 +62,20 @@ const handleClick = (event: { preventDefault: () => void }) => {
   bottom: 1rem;
   left: 1rem;
   z-index: 1000;
+}
+
+/* class to make the button bigger */
+.dropdown-button {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-dropdown-menu-title-content > a {
+  font-size: 1.2rem;
+  margin: 0.5rem;
 }
 </style>

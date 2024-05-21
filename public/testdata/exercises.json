@@ -29,6 +29,31 @@
       "id": "006",
       "title": "Dips",
       "description": "Dips are a compound push exercise effective in targeting the chest, shoulders, and triceps. The movement starts by suspending the body between parallel bars or rings, then lowering and raising the body using arm strength."
+    },
+    {
+      "id": "007",
+      "title": "Barbell Squat",
+      "description": "The Barbell Squat is a compound exercise that targets the lower body, including the quadriceps, hamstrings, and glutes. It involves lifting a barbell placed on the shoulders while performing a squatting motion."
+    },
+    {
+      "id": "008",
+      "title": "Leg Press",
+      "description": "The Leg Press is a machine-based exercise that targets the lower body muscles, including the quadriceps, hamstrings, and glutes. It involves pushing a weighted platform away from the body using the legs."
+    },
+    {
+      "id": "009",
+      "title": "Seated Calf Raise",
+      "description": "The Seated Calf Raise targets the calf muscles, specifically the soleus and gastrocnemius. It is performed by sitting on a machine with the knees bent and pushing a weighted lever with the balls of the feet."
+    },
+    {
+      "id": "010",
+      "title": "Leg extension",
+      "description": "The Leg Extension is an isolation exercise that targets the quadriceps muscles. It is performed using a machine that involves extending the legs against resistance by lifting a padded lever with the feet."
+    },
+    {
+      "id": "011",
+      "title": "Dumbbell split squat",
+      "description": "The Dumbbell Split Squat is a unilateral lower body exercise that targets the quadriceps, hamstrings, and glutes. It is performed by stepping back into a lunge position while holding dumbbells and lowering the back knee towards the ground."
     }
   ]
 }

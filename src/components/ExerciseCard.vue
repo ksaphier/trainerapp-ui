@@ -43,7 +43,7 @@ defineProps({
   description: { type: String, default: "Description" },
   series: { type: Number, default: 4 },
   reps: { type: Number, default: 8 },
-  rest: { type: Number, default: 903 },
+  rest: { type: Number, default: 90 },
   weight: { type: Number, default: 60 },
 });
 
@@ -56,17 +56,24 @@ b {
 
 .weight-container {
   display: inline-block;
-  width: fit-content; /* or any fixed width you prefer */
   text-align: end;
+  background-color: var(--text-color);
+  color: var(--back-color);
+  width: 92px;
+  padding-right: 6px;
+  border-radius: 6px;
 }
 
 .weight {
   font-size: 1.5rem;
+  color: var(--back-color);
 }
+
 .ant-card-meta {
   align-items: center;
   flex-direction: row-reverse;
 }
+
 .ant-collapse-content-box > p {
   margin: 0px;
 }

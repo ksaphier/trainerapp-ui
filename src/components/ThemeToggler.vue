@@ -8,8 +8,8 @@
             'icon-move-left': !activeTheme,
           }"
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
         >
           <path
@@ -36,18 +36,23 @@ defineProps<{
 
 <style scoped>
 .theme-toggler {
-  width: 100;
+  width: 100%;
   background-color: var(--back-color);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .icon-move-right {
   transition: transform 0.3s ease-in-out;
-  transform: translateX(50%);
+  transform: translateX(80%);
   fill: var(--text-color);
 }
 
 .icon-move-left {
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-50%);
+  transform: translateX(-80%);
   fill: var(--text-color);
 }
 </style>
