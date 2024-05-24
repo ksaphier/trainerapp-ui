@@ -3,12 +3,17 @@
     {
       "id": "1",
       "title": "Leg Workout",
-      "description": "This is a leg workout"
+      "description": "This comprehensive leg workout targets all major muscle groups in the lower body, including the quadriceps, hamstrings, glutes, and calves. The session combines strength exercises like squats and lunges with dynamic movements to enhance mobility, stability, and overall leg strength."
     },
     {
       "id": "2",
       "title": "Arm Workout",
-      "description": "This is an arm workout"
+      "description": "Focused on building strength and muscle in the upper limbs, this arm workout includes a variety of exercises for the biceps, triceps, and forearms. It incorporates both isolation exercises to sculpt muscle and compound movements that promote overall arm functionality and growth."
+    },
+    {
+      "id": "3",
+      "title": "Back Workout",
+      "description": "Designed to strengthen and broaden the back, this workout includes exercises that target the upper, middle, and lower back muscles. Key exercises include rows and pull-downs, which help improve posture, increase muscle mass, and enhance back resilience and power."
     }
   ]
 }

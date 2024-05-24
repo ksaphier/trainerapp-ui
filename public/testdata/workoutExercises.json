@@ -89,8 +89,56 @@
       "weight": 65
     },
     {
-      "workoutId": "1",
+      "workoutId": "3",
       "exerciseId": "012",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "013",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "014",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "015",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "016",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "017",
+      "series": 6,
+      "reps": 8,
+      "rest": 90,
+      "weight": 65
+    },
+    {
+      "workoutId": "3",
+      "exerciseId": "018",
       "series": 6,
       "reps": 8,
       "rest": 90,

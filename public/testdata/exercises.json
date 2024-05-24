@@ -54,6 +54,41 @@
       "id": "011",
       "title": "Dumbbell split squat",
       "description": "The Dumbbell Split Squat is a unilateral lower body exercise that targets the quadriceps, hamstrings, and glutes. It is performed by stepping back into a lunge position while holding dumbbells and lowering the back knee towards the ground."
+    },
+    {
+      "id": "012",
+      "title": "Cable Row",
+      "description": "Cable Rows are a versatile back exercise that targets the middle back muscles. Using a cable machine, pull the handle toward your waist while keeping the back straight and core engaged."
+    },
+    {
+      "id": "013",
+      "title": "Wide-Grip Cable Row",
+      "description": "This variation of the Cable Row uses a wider grip to focus more on the outer lats and the overall width of the back. It’s performed similarly to the standard Cable Row but with the hands spaced wider apart on the bar."
+    },
+    {
+      "id": "014",
+      "title": "Wide Grip Pull Downs",
+      "description": "Wide Grip Pull Downs target the outer lats, enhancing back width. The exercise is performed on a cable machine with a wide bar, pulling the bar down in front of you to collarbone level while keeping the back straight."
+    },
+    {
+      "id": "015",
+      "title": "Neutral Grip Pull Downs",
+      "description": "Neutral Grip Pull Downs use a dual handle attachment or a specific neutral grip bar on a cable machine. This variation emphasizes the middle to lower lat muscles and allows for a comfortable grip that minimizes shoulder strain."
+    },
+    {
+      "id": "016",
+      "title": "Half-Kneeling One-Arm Lat Pulldown",
+      "description": "This exercise is performed on a cable machine from a half-kneeling position, using one arm at a time. It allows for a focused contraction of the lats and helps improve core stability and unilateral strength."
+    },
+    {
+      "id": "017",
+      "title": "Meadows Row",
+      "description": "The Meadows Row is named after bodybuilder John Meadows and is performed using a landmine or a barbell secured in a corner. It targets the lats, upper back, and biceps, providing a unique angle for muscle engagement."
+    },
+    {
+      "id": "018",
+      "title": "Chest-Supported Row",
+      "description": "Performed on an incline bench, this row variation allows for back engagement without lower back strain. It can be done with dumbbells (Helms Row) or a barbell, focusing on pulling with the upper back and lats."
     }
   ]
 }
