@@ -2,92 +2,93 @@
   "exercises": [
     {
       "id": "001",
-      "title": "Neutral Grip Pull-Ups",
-      "description": "Neutral Grip Pull-Ups focus on the upper body, engaging the forearms, biceps, and back muscles. This exercise is performed using parallel grips on a pull-up bar, which reduces wrist strain and targets the forearm muscles more effectively."
+      "name": "Neutral Grip Pull-Ups",
+      "description": "This exercise is performed using parallel grips on a pull-up bar, which reduces wrist strain and targets the forearm muscles more effectively.",
+      "muscleTargeted": ["Forearms", "Biceps", "Lats"]
     },
     {
       "id": "002",
-      "title": "Zottman Curls",
+      "name": "Zottman Curls",
       "description": "Zottman Curls are effective for working both the biceps and forearms. The exercise involves a regular bicep curl followed by a wrist rotation at the top of the movement, switching from a palm-up to a palm-down position before lowering the weights."
     },
     {
       "id": "003",
-      "title": "Reverse Curl",
+      "name": "Reverse Curl",
       "description": "The Reverse Curl primarily targets the brachioradialis, a muscle of the forearm, while also engaging the biceps. It is performed with an overhand grip, which shifts the workload from the biceps to the forearms."
     },
     {
       "id": "004",
-      "title": "Hammer Curls",
+      "name": "Hammer Curls",
       "description": "Hammer Curls focus on the biceps and the forearm's brachioradialis muscle. The dumbbells are lifted with the thumbs pointing upwards, resembling a hammer grip, which helps in muscle development on the outer side of the arm."
     },
     {
       "id": "005",
-      "title": "Tricep Rope Extension",
+      "name": "Tricep Rope Extension",
       "description": "This exercise targets the triceps muscles. It involves using a rope attachment on a cable machine, pulling the rope downward by extending the arms and focusing on isolating the triceps."
     },
     {
       "id": "006",
-      "title": "Dips",
+      "name": "Dips",
       "description": "Dips are a compound push exercise effective in targeting the chest, shoulders, and triceps. The movement starts by suspending the body between parallel bars or rings, then lowering and raising the body using arm strength."
     },
     {
       "id": "007",
-      "title": "Barbell Squat",
+      "name": "Barbell Squat",
       "description": "The Barbell Squat is a compound exercise that targets the lower body, including the quadriceps, hamstrings, and glutes. It involves lifting a barbell placed on the shoulders while performing a squatting motion."
     },
     {
       "id": "008",
-      "title": "Leg Press",
+      "name": "Leg Press",
       "description": "The Leg Press is a machine-based exercise that targets the lower body muscles, including the quadriceps, hamstrings, and glutes. It involves pushing a weighted platform away from the body using the legs."
     },
     {
       "id": "009",
-      "title": "Seated Calf Raise",
+      "name": "Seated Calf Raise",
       "description": "The Seated Calf Raise targets the calf muscles, specifically the soleus and gastrocnemius. It is performed by sitting on a machine with the knees bent and pushing a weighted lever with the balls of the feet."
     },
     {
       "id": "010",
-      "title": "Leg extension",
+      "name": "Leg extension",
       "description": "The Leg Extension is an isolation exercise that targets the quadriceps muscles. It is performed using a machine that involves extending the legs against resistance by lifting a padded lever with the feet."
     },
     {
       "id": "011",
-      "title": "Dumbbell split squat",
+      "name": "Dumbbell split squat",
       "description": "The Dumbbell Split Squat is a unilateral lower body exercise that targets the quadriceps, hamstrings, and glutes. It is performed by stepping back into a lunge position while holding dumbbells and lowering the back knee towards the ground."
     },
     {
       "id": "012",
-      "title": "Cable Row",
+      "name": "Cable Row",
       "description": "Cable Rows are a versatile back exercise that targets the middle back muscles. Using a cable machine, pull the handle toward your waist while keeping the back straight and core engaged."
     },
     {
       "id": "013",
-      "title": "Wide-Grip Cable Row",
+      "name": "Wide-Grip Cable Row",
       "description": "This variation of the Cable Row uses a wider grip to focus more on the outer lats and the overall width of the back. It’s performed similarly to the standard Cable Row but with the hands spaced wider apart on the bar."
     },
     {
       "id": "014",
-      "title": "Wide Grip Pull Downs",
+      "name": "Wide Grip Pull Downs",
       "description": "Wide Grip Pull Downs target the outer lats, enhancing back width. The exercise is performed on a cable machine with a wide bar, pulling the bar down in front of you to collarbone level while keeping the back straight."
     },
     {
       "id": "015",
-      "title": "Neutral Grip Pull Downs",
+      "name": "Neutral Grip Pull Downs",
       "description": "Neutral Grip Pull Downs use a dual handle attachment or a specific neutral grip bar on a cable machine. This variation emphasizes the middle to lower lat muscles and allows for a comfortable grip that minimizes shoulder strain."
     },
     {
       "id": "016",
-      "title": "Half-Kneeling One-Arm Lat Pulldown",
+      "name": "Half-Kneeling One-Arm Lat Pulldown",
       "description": "This exercise is performed on a cable machine from a half-kneeling position, using one arm at a time. It allows for a focused contraction of the lats and helps improve core stability and unilateral strength."
     },
     {
       "id": "017",
-      "title": "Meadows Row",
+      "name": "Meadows Row",
       "description": "The Meadows Row is named after bodybuilder John Meadows and is performed using a landmine or a barbell secured in a corner. It targets the lats, upper back, and biceps, providing a unique angle for muscle engagement."
     },
     {
       "id": "018",
-      "title": "Chest-Supported Row",
+      "name": "Chest-Supported Row",
       "description": "Performed on an incline bench, this row variation allows for back engagement without lower back strain. It can be done with dumbbells (Helms Row) or a barbell, focusing on pulling with the upper back and lats."
     }
   ]

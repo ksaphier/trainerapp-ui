@@ -1,27 +1,33 @@
 <template>
   <div>
-    <h1>Workouts</h1>
-    <!-- <div style="display: flex; flex-direction: column; gap: 1rem"> -->
+    <Navbar title="Workouts" :backIcon="false">
+      <a-button
+        type="primary"
+        :icon="h(PlusOutlined)"
+        @click="() => (openNew = true)"
+        >New Workout</a-button
+      >
+    </Navbar>
     <TransitionGroup name="list" tag="div">
       <router-link
         v-for="workout in workouts"
         :key="workout.id"
         :to="`/workout/${workout.id}`"
       >
-        <WorkoutCard
-          :title="workout.title"
-          :description="workout.description"
-        />
+        <WorkoutCard :title="workout.title" :type="workout.type" />
       </router-link>
     </TransitionGroup>
-    <!-- </div> -->
+    <NewWorkout :open="openNew" @close-modal="createNewWorkout" />
   </div>
 </template>
 
 <script setup lang="ts">
+import Navbar from "../components/Navbar.vue";
+import NewWorkout from "../components/workouts/NewWorkout.vue";
 import WorkoutCard from "../components/WorkoutCard.vue";
 import { useWorkoutStore } from "../store/workoutStore";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref, h } from "vue";
+import { PlusOutlined } from "@ant-design/icons-vue";
 
 const store = useWorkoutStore();
 
@@ -31,6 +37,13 @@ onMounted(() => {
 });
 
 const workouts = computed(() => store.workouts);
+
+const openNew = ref(false);
+
+const createNewWorkout = (values: any) => {
+  if (values) store.createWorkout(values);
+  else openNew.value = false;
+};
 </script>
 <style scoped>
 .list-move,
@@ -48,7 +61,8 @@ const workouts = computed(() => store.workouts);
 .list-leave-active {
   position: absolute;
 }
-h1 + div {
+
+.navbar + div {
   display: flex;
   flex-direction: column;
   gap: 1rem;

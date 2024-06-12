@@ -7,8 +7,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --dark-color: #1c1c1c;
-  --light-color: #e8e8e8;
+  --dark-color: rgb(28, 28, 28);
+  --dark-color-transparency: rgba(28, 28, 28, 0.2);
+  --light-color: rgb(232, 232, 232);
+  --light-color-transparency: rgba(232, 232, 232, 0.05);
 }
 
 .light-theme {
@@ -16,6 +18,8 @@
   color: var(--dark-color);
   --back-color: var(--light-color);
   --text-color: var(--dark-color);
+
+  --shadow-color: var(--dark-color-transparency);
 }
 
 .dark-theme {
@@ -23,6 +27,8 @@
   color: var(--light-color);
   --back-color: var(--dark-color);
   --text-color: var(--light-color);
+
+  --shadow-color: var(--light-color-transparency);
 }
 
 body {
@@ -40,4 +46,24 @@ h1 {
   margin: 0 auto;
   padding: 1rem;
   text-align: left;
+}
+
+.ant-btn {
+  box-shadow: 0px 8px 32px var(--shadow-color);
+}
+.ant-btn:hover {
+  box-shadow: 0px 4px 16px var(--shadow-color);
+}
+
+.ant-btn-primary {
+  color: var(--back-color);
+  background-color: var(--text-color);
+}
+
+.ant-btn-primary:hover {
+  color: var(--back-color) !important;
+}
+
+.ant-radio-button-checked + span {
+  color: var(--back-color);
 }

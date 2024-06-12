@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>{{ workout?.title }}</h1>
+    <Navbar :title="workout?.title" />
     <p>{{ workout?.description }}</p>
     <TransitionGroup name="list" tag="div">
       <ExerciseCard
         v-for="exercise in workout?.exercises"
         :key="exercise.id"
-        :title="exercise.title"
+        :title="exercise.name"
         :description="exercise.description"
         :series="exercise.series"
         :reps="exercise.reps"
@@ -17,6 +17,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import Navbar from "../components/Navbar.vue";
 import { useRoute } from "vue-router";
 import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted } from "vue";
@@ -32,7 +33,7 @@ onMounted(() => {
 const workout = computed(() => store.currentWorkout);
 </script>
 
-<style>
+<style scoped>
 .list-move,
 .list-enter-active,
 .list-leave-active {

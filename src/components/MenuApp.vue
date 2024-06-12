@@ -72,6 +72,14 @@ const handleClick = (event: { preventDefault: () => void }) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--text-color);
+  color: var(--back-color);
+  border-color: var(--text-color);
+}
+
+.dropdown-button:hover {
+  background-color: var(--back-color);
+  color: var(--text-color);
 }
 
 .ant-dropdown-menu-title-content > a {

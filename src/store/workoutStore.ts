@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { Workout, CurrentWorkout, Exercise } from "../types";
+import axios from "axios";
 
 export const useWorkoutStore = defineStore("workout", () => {
   const workouts = ref<Workout[]>([]);
@@ -54,10 +55,29 @@ export const useWorkoutStore = defineStore("workout", () => {
     }
   }
 
+  async function createWorkout(workout: Workout) {
+    console.log(workout);
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/workouts",
+        workout,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return {
     workouts,
     currentWorkout,
     fetchWorkouts,
     fetchWorkoutExercises,
+    createWorkout,
   };
 });

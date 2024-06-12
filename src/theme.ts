@@ -3,14 +3,14 @@ import { theme } from "ant-design-vue";
 
 const lightTheme = {
   token: {
-    colorPrimary: "black",
+    colorPrimary: "rgb(28, 28, 28)",
   },
   algorithm: theme.defaultAlgorithm,
 };
 
 const darkTheme = {
   token: {
-    colorPrimary: "white",
+    colorPrimary: "rgb(232, 232, 232)",
   },
   algorithm: theme.darkAlgorithm,
 };
