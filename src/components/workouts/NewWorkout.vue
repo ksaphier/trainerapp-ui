@@ -1,47 +1,40 @@
 <template>
   <a-modal v-model:open="open" title="Create a new workout" @ok="submitForm">
-    <a-form
-      layout="vertical"
-      ref="formRef"
-      :model="formState"
-      name="new-workout-form"
-      autocomplete="off"
-    >
-      <a-form-item
-        label="Workout Name"
-        name="name"
-        :rules="[
-          { required: true, message: 'Please input a name for your Workout!' },
-        ]"
+    <div style="display: flex; gap: 1rem; flex-direction: column">
+      <a-form
+        layout="vertical"
+        ref="formRef"
+        :model="formState"
+        name="new-workout-form"
+        autocomplete="off"
       >
-        <a-input v-model:value="formState.name" />
-      </a-form-item>
-
-      <a-form-item
-        label="Workout type"
-        name="type"
-        :rules="[
-          { required: true, message: 'Please select the Workout type!' },
-        ]"
-      >
-        <a-radio-group
-          v-model:value="formState.type"
-          button-style="solid"
-          style="display: flex; justify-content: space-evenly"
+        <a-form-item
+          label="Workout Name"
+          name="name"
+          :rules="[
+            {
+              required: true,
+              message: 'Please input a name for your Workout!',
+            },
+          ]"
         >
-          <a-radio-button
-            value="standard"
-            style="width: 100%; display: flex; justify-content: center"
-            >Standard</a-radio-button
-          >
-          <a-radio-button
-            value="timed"
-            style="width: 100%; display: flex; justify-content: center"
-            >Timed</a-radio-button
-          >
-        </a-radio-group>
-      </a-form-item>
-    </a-form>
+          <a-input v-model:value="formState.name" />
+        </a-form-item>
+
+        <a-form-item
+          label="Workout type"
+          name="type"
+          :rules="[
+            { required: true, message: 'Please select the Workout type!' },
+          ]"
+        >
+          <a-radio-group v-model:value="formState.type" button-style="solid">
+            <a-radio-button value="standard">Standard</a-radio-button>
+            <a-radio-button value="timed">Timed</a-radio-button>
+          </a-radio-group>
+        </a-form-item>
+      </a-form>
+    </div>
   </a-modal>
 </template>
 <script lang="ts" setup>

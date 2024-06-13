@@ -1,8 +1,19 @@
 <template>
   <div>
-    <Navbar :title="workout?.title" />
-    <p>{{ workout?.description }}</p>
-    <TransitionGroup name="list" tag="div">
+    <Navbar :title="workout?.details?.name" :sub-title="workout?.details?.type">
+      <a-button
+        type="primary"
+        :icon="h(PlusOutlined)"
+        @click="() => (openNew = true)"
+        >Add</a-button
+      >
+    </Navbar>
+    <p>{{ workout?.details.description }}</p>
+    <TransitionGroup
+      name="list"
+      tag="div"
+      v-if="workout?.exercises?.length ?? 0 > 0"
+    >
       <ExerciseCard
         v-for="exercise in workout?.exercises"
         :key="exercise.id"
@@ -14,14 +25,20 @@
         :weight="exercise.weight"
       />
     </TransitionGroup>
+    <div v-else>
+      <p style="display: flex; justify-content: center">No exercises found</p>
+    </div>
+    <NewExercise :open="openNew" @close-modal="addExercise" />
   </div>
 </template>
 <script setup lang="ts">
-import Navbar from "../components/Navbar.vue";
+import Navbar from "../components/global/Navbar.vue";
 import { useRoute } from "vue-router";
 import { useWorkoutStore } from "../store/workoutStore";
-import { computed, onMounted } from "vue";
-import ExerciseCard from "../components/ExerciseCard.vue";
+import { computed, onMounted, h, ref } from "vue";
+import ExerciseCard from "../components/exercises/ExerciseCard.vue";
+import NewExercise from "../components/exercises/NewExercise.vue";
+import { PlusOutlined } from "@ant-design/icons-vue";
 
 const route = useRoute();
 const store = useWorkoutStore();
@@ -31,6 +48,14 @@ onMounted(() => {
 });
 
 const workout = computed(() => store.currentWorkout);
+
+const openNew = ref(false);
+
+const addExercise = (values: any) => {
+  if (values)
+    console.log("new exercise", { workoutId: route.params.id, ...values });
+  else openNew.value = false;
+};
 </script>
 
 <style scoped>

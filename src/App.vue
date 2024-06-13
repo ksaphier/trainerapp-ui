@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { provide } from "vue";
-import MenuApp from "./components/MenuApp.vue";
+import MenuApp from "./components/global/MenuApp.vue";
 import { antTheme, toggleTheme, activeTheme } from "./theme";
 
 provide("activeTheme", activeTheme);

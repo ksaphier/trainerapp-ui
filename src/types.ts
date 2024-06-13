@@ -1,6 +1,6 @@
 export interface Workout {
   id: string;
-  title: string;
+  name: string;
   description: string;
   type: string;
 }
@@ -13,6 +13,7 @@ export interface Exercise {
   rest: number;
   weight: number;
 }
-export interface CurrentWorkout extends Workout {
+export interface CurrentWorkout {
+  details: Workout;
   exercises: Exercise[];
 }

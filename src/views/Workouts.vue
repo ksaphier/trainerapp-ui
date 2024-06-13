@@ -5,7 +5,7 @@
         type="primary"
         :icon="h(PlusOutlined)"
         @click="() => (openNew = true)"
-        >New Workout</a-button
+        >New</a-button
       >
     </Navbar>
     <TransitionGroup name="list" tag="div">
@@ -14,7 +14,7 @@
         :key="workout.id"
         :to="`/workout/${workout.id}`"
       >
-        <WorkoutCard :title="workout.title" :type="workout.type" />
+        <WorkoutCard :title="workout.name" :type="workout.type" />
       </router-link>
     </TransitionGroup>
     <NewWorkout :open="openNew" @close-modal="createNewWorkout" />
@@ -22,9 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from "../components/Navbar.vue";
+import Navbar from "../components/global/Navbar.vue";
 import NewWorkout from "../components/workouts/NewWorkout.vue";
-import WorkoutCard from "../components/WorkoutCard.vue";
+import WorkoutCard from "../components/workouts/WorkoutCard.vue";
 import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted, ref, h } from "vue";
 import { PlusOutlined } from "@ant-design/icons-vue";

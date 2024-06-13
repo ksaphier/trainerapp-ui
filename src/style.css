@@ -67,3 +67,13 @@ h1 {
 .ant-radio-button-checked + span {
   color: var(--back-color);
 }
+
+.ant-radio-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ant-radio-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
