@@ -9,7 +9,7 @@
         autocomplete="off"
       >
         <a-form-item
-          label="Workout Name"
+          label="Name"
           name="name"
           :rules="[
             {
@@ -22,7 +22,7 @@
         </a-form-item>
 
         <a-form-item
-          label="Workout type"
+          label="Type"
           name="type"
           :rules="[
             { required: true, message: 'Please select the Workout type!' },
@@ -38,7 +38,7 @@
   </a-modal>
 </template>
 <script lang="ts" setup>
-import { computed, reactive, ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 
 const props = defineProps({
   open: Boolean,
@@ -79,4 +79,12 @@ const submitForm = () => {
       });
   }
 };
+
+watch(
+  () => open.value,
+  () => {
+    formState.name = "";
+    formState.type = "";
+  }
+);
 </script>

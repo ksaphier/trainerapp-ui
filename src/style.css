@@ -10,7 +10,7 @@
   --dark-color: rgb(28, 28, 28);
   --dark-color-transparency: rgba(28, 28, 28, 0.2);
   --light-color: rgb(232, 232, 232);
-  --light-color-transparency: rgba(232, 232, 232, 0.05);
+  --light-color-transparency: rgba(232, 232, 232, 0.1);
 }
 
 .light-theme {
@@ -76,4 +76,7 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.ant-modal-mask {
+  backdrop-filter: blur(32px);
 }

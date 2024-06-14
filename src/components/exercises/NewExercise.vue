@@ -28,7 +28,7 @@
             :options="exercisesListFiltered"
           ></a-select>
         </a-form-item>
-        <div style="display: flex; justify-content: space-between">
+        <div class="container">
           <a-form-item
             label="Series"
             name="series"
@@ -80,7 +80,6 @@
               :max="300"
             />
           </a-form-item>
-          <!-- weight -->
           <a-form-item
             label="Weight"
             name="weight"
@@ -104,7 +103,7 @@
   </a-modal>
 </template>
 <script lang="ts" setup>
-import { computed, reactive, ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 
 const props = defineProps({
   open: Boolean,
@@ -167,4 +166,25 @@ const exercisesListFiltered = computed(() => {
         exercise.focus.includes(filters.value)
       );
 });
+
+watch(
+  () => open.value,
+  () => {
+    formState.exerciseId = "";
+    formState.series = 4;
+    formState.reps = 8;
+    formState.rest = 60;
+    formState.weight = 0;
+  }
+);
 </script>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.ant-input-number-in-form-item {
+  width: 100%;
+}
+</style>

@@ -40,11 +40,30 @@ export const useWorkoutStore = defineStore("workout", () => {
     }
   }
 
+  async function addExerciseToWorkout(exercise: any) {
+    try {
+      const response = await axios.post(
+        `${baseURL}/workouts/addExercise`,
+        exercise,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return {
     workouts,
     currentWorkout,
     fetchWorkouts,
     fetchWorkoutExercises,
     createWorkout,
+    addExerciseToWorkout,
   };
 });

@@ -4,7 +4,7 @@
       <a-button
         type="primary"
         :icon="h(PlusOutlined)"
-        @click="() => (openNew = true)"
+        @click="() => (openAdd = true)"
         >Add</a-button
       >
     </Navbar>
@@ -28,7 +28,7 @@
     <div v-else>
       <p style="display: flex; justify-content: center">No exercises found</p>
     </div>
-    <NewExercise :open="openNew" @close-modal="addExercise" />
+    <NewExercise :open="openAdd" @close-modal="addExercise" />
   </div>
 </template>
 <script setup lang="ts">
@@ -49,12 +49,18 @@ onMounted(() => {
 
 const workout = computed(() => store.currentWorkout);
 
-const openNew = ref(false);
+const openAdd = ref(false);
 
-const addExercise = (values: any) => {
-  if (values)
-    console.log("new exercise", { workoutId: route.params.id, ...values });
-  else openNew.value = false;
+const addExercise = async (values: any) => {
+  if (values) {
+    const response = await store.addExerciseToWorkout({
+      workoutId: route.params.id,
+      ...values,
+    });
+    console.log("exercise added:", response);
+  }
+  store.fetchWorkoutExercises(route.params.id as string);
+  openAdd.value = false;
 };
 </script>
 

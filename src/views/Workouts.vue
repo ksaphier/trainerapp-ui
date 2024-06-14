@@ -28,7 +28,7 @@ import WorkoutCard from "../components/workouts/WorkoutCard.vue";
 import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted, ref, h } from "vue";
 import { PlusOutlined } from "@ant-design/icons-vue";
-
+import { useRouter } from "vue-router";
 const store = useWorkoutStore();
 
 onMounted(() => {
@@ -40,9 +40,15 @@ const workouts = computed(() => store.workouts);
 
 const openNew = ref(false);
 
-const createNewWorkout = (values: any) => {
-  if (values) store.createWorkout(values);
-  else openNew.value = false;
+const router = useRouter();
+
+const createNewWorkout = async (values: any) => {
+  if (values) {
+    const response = await store.createWorkout(values);
+    console.log("new workout id:", response.id);
+    router.push(`/workout/${response.id}`);
+  }
+  openNew.value = false;
 };
 </script>
 <style scoped>

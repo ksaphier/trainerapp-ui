@@ -23,6 +23,11 @@
               Workouts
             </router-link>
           </a-menu-item>
+          <a-menu-item>
+            <router-link to="/exercises" @click.native="handleClick">
+              Exercises
+            </router-link>
+          </a-menu-item>
         </a-menu>
       </template>
       <a-button
