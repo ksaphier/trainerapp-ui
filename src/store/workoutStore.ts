@@ -1,12 +1,13 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { Workout, CurrentWorkout } from "../types";
+import { Workout, CurrentWorkout, Exercise } from "../types";
 import axios from "axios";
 
 const baseURL = "http://192.168.1.17:8080";
 
 export const useWorkoutStore = defineStore("workout", () => {
   const workouts = ref<Workout[]>([]);
+  const exercises = ref<Exercise[]>([]);
   const currentWorkout = ref<CurrentWorkout | null>(null);
 
   async function fetchWorkouts() {
@@ -51,7 +52,17 @@ export const useWorkoutStore = defineStore("workout", () => {
           },
         }
       );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function fetchExercises() {
+    try {
+      const response = await axios.get(`${baseURL}/exercises`);
       console.log(response.data);
+      exercises.value = response.data;
       return response.data;
     } catch (error) {
       console.error(error);
@@ -60,10 +71,12 @@ export const useWorkoutStore = defineStore("workout", () => {
 
   return {
     workouts,
+    exercises,
     currentWorkout,
     fetchWorkouts,
     fetchWorkoutExercises,
     createWorkout,
     addExerciseToWorkout,
+    fetchExercises,
   };
 });

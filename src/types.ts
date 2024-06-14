@@ -4,7 +4,7 @@ export interface Workout {
   description: string;
   type: string;
 }
-export interface Exercise {
+export interface WorkoutExercise {
   id: string;
   name: string;
   description: string;
@@ -15,5 +15,12 @@ export interface Exercise {
 }
 export interface CurrentWorkout {
   details: Workout;
-  exercises: Exercise[];
+  exercises: WorkoutExercise[];
+}
+
+export interface Exercise {
+  id: string;
+  name: string;
+  description: string;
+  muscles: string[];
 }
