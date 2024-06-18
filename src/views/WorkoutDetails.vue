@@ -28,7 +28,7 @@
     <div v-else>
       <p style="display: flex; justify-content: center">No exercises found</p>
     </div>
-    <NewExercise :open="openAdd" @close-modal="addExercise" />
+    <AddExercise :open="openAdd" @close-modal="addExercise" />
   </div>
 </template>
 <script setup lang="ts">
@@ -37,7 +37,7 @@ import { useRoute } from "vue-router";
 import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted, h, ref } from "vue";
 import ExerciseCard from "../components/exercises/ExerciseCard.vue";
-import NewExercise from "../components/exercises/NewExercise.vue";
+import AddExercise from "../components/exercises/AddExercise.vue";
 import { PlusOutlined } from "@ant-design/icons-vue";
 
 const route = useRoute();
@@ -53,11 +53,10 @@ const openAdd = ref(false);
 
 const addExercise = async (values: any) => {
   if (values) {
-    const response = await store.addExerciseToWorkout({
+    await store.addExerciseToWorkout({
       workoutId: route.params.id,
       ...values,
     });
-    console.log("exercise added:", response);
   }
   store.fetchWorkoutExercises(route.params.id as string);
   openAdd.value = false;

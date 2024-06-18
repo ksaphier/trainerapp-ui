@@ -1,103 +1,52 @@
 <template>
-  <a-modal v-model:open="open" title="Add an exercise" @ok="submitForm">
+  <a-modal v-model:open="open" title="Create a new workout" @ok="submitForm">
     <div style="display: flex; gap: 1rem; flex-direction: column">
-      <a-radio-group v-model:value="filters" button-style="solid">
-        <a-radio-button value="any">Any</a-radio-button>
-        <a-radio-button value="upper">Upper</a-radio-button>
-        <a-radio-button value="lower">Lower</a-radio-button>
-      </a-radio-group>
       <a-form
         layout="vertical"
         ref="formRef"
         :model="formState"
-        name="add-exercise-form"
+        name="new-workout-form"
         autocomplete="off"
       >
         <a-form-item
-          label="Exercise"
-          name="exerciseId"
+          label="Name"
+          name="name"
           :rules="[
             {
               required: true,
-              message: 'Please select an Exercise!',
+              message: 'Please input a name for the exercise!',
             },
           ]"
         >
-          <a-select
-            v-model:value="formState.exerciseId"
-            :options="exercisesListFiltered"
-          ></a-select>
+          <a-input v-model:value="formState.name" />
         </a-form-item>
-        <div class="container">
-          <a-form-item
-            label="Series"
-            name="series"
-            :rules="[
-              {
-                required: true,
-                message: 'This is required!',
-              },
-            ]"
+        <!-- description -->
+        <a-form-item
+          label="Description"
+          name="description"
+          :rules="[
+            {
+              required: true,
+              message: 'Please input a description for the exercise!',
+            },
+          ]"
+        >
+          <a-input v-model:value="formState.description" />
+        </a-form-item>
+
+        <a-form-item
+          label="Focus"
+          name="focus"
+          :rules="[{ required: true, message: 'Select the focus!' }]"
+        >
+          <a-checkbox-group
+            v-model:value="formState.focus"
+            button-style="solid"
           >
-            <a-input-number
-              id="series"
-              v-model:value="formState.series"
-              :min="1"
-              :max="10"
-            />
-          </a-form-item>
-          <a-form-item
-            label="Reps"
-            name="reps"
-            :rules="[
-              {
-                required: true,
-                message: 'This is required!',
-              },
-            ]"
-          >
-            <a-input-number
-              id="reps"
-              v-model:value="formState.reps"
-              :min="1"
-              :max="100"
-            />
-          </a-form-item>
-          <a-form-item
-            label="Rest"
-            name="rest"
-            :rules="[
-              {
-                required: true,
-                message: 'This is required!',
-              },
-            ]"
-          >
-            <a-input-number
-              id="rest"
-              v-model:value="formState.rest"
-              :min="1"
-              :max="300"
-            />
-          </a-form-item>
-          <a-form-item
-            label="Weight"
-            name="weight"
-            :rules="[
-              {
-                required: true,
-                message: 'This is required!',
-              },
-            ]"
-          >
-            <a-input-number
-              id="weight"
-              v-model:value="formState.weight"
-              :min="1"
-              :max="300"
-            />
-          </a-form-item>
-        </div>
+            <a-checkbox value="lower">Lower</a-checkbox>
+            <a-checkbox value="upper">Upper</a-checkbox>
+          </a-checkbox-group>
+        </a-form-item>
       </a-form>
     </div>
   </a-modal>
@@ -120,22 +69,16 @@ const handleOk = (values: any) => {
   emit("close-modal", values);
 };
 
-const filters = ref<string>("any");
-
 interface FormState {
-  exerciseId: string;
-  series: number;
-  reps: number;
-  rest: number;
-  weight: number;
+  name: string;
+  description: string;
+  focus: string[];
 }
 
 const formState = reactive<FormState>({
-  exerciseId: "",
-  series: 4,
-  reps: 8,
-  rest: 60,
-  weight: 0,
+  name: "",
+  description: "",
+  focus: [],
 });
 
 const formRef = ref<any>(null);
@@ -153,38 +96,12 @@ const submitForm = () => {
   }
 };
 
-const exercisesList = [
-  { label: "Bench Press", value: "2", focus: ["upper"] },
-  { label: "Squats", value: "3", focus: ["lower"] },
-  { label: "Deadlifts", value: "4", focus: ["upper", "lower"] },
-];
-
-const exercisesListFiltered = computed(() => {
-  return filters.value === "any"
-    ? exercisesList
-    : exercisesList.filter((exercise) =>
-        exercise.focus.includes(filters.value)
-      );
-});
-
 watch(
   () => open.value,
   () => {
-    formState.exerciseId = "";
-    formState.series = 4;
-    formState.reps = 8;
-    formState.rest = 60;
-    formState.weight = 0;
+    formState.name = "";
+    formState.description = "";
+    formState.focus = [];
   }
 );
 </script>
-<style scoped>
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-.ant-input-number-in-form-item {
-  width: 100%;
-}
-</style>

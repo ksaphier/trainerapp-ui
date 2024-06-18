@@ -5,7 +5,7 @@
     @click="activeKey = activeKey.includes('1') ? [] : ['1']"
   >
     <a-card-meta :title="title">
-      <template #avatar>
+      <template v-if="weight" #avatar>
         <div class="weight-container">
           <b class="weight">{{ weight }}</b> kg
         </div>
@@ -22,7 +22,7 @@
         </p>
       </a-collapse-panel>
     </a-collapse>
-    <template #actions>
+    <template v-if="!!series || !!reps || !!rest" #actions>
       <span
         >Series: <b>{{ series }}</b></span
       >
@@ -41,10 +41,10 @@ import { ref } from "vue";
 defineProps({
   title: { type: String, default: "Title" },
   description: { type: String, default: "Description" },
-  series: { type: Number, default: 4 },
-  reps: { type: Number, default: 8 },
-  rest: { type: Number, default: 90 },
-  weight: { type: Number, default: 60 },
+  series: { type: Number },
+  reps: { type: Number },
+  rest: { type: Number },
+  weight: { type: Number },
 });
 
 const activeKey = ref(["0"]);
@@ -70,7 +70,7 @@ b {
 }
 
 .ant-card-meta {
-  align-items: center;
+  justify-content: space-between;
   flex-direction: row-reverse;
 }
 

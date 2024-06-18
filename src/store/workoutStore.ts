@@ -61,8 +61,21 @@ export const useWorkoutStore = defineStore("workout", () => {
   async function fetchExercises() {
     try {
       const response = await axios.get(`${baseURL}/exercises`);
-      console.log(response.data);
       exercises.value = response.data;
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // new exercise function
+  async function createExercise(exercise: Exercise) {
+    try {
+      const response = await axios.post(`${baseURL}/exercises`, exercise, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       return response.data;
     } catch (error) {
       console.error(error);
@@ -78,5 +91,6 @@ export const useWorkoutStore = defineStore("workout", () => {
     createWorkout,
     addExerciseToWorkout,
     fetchExercises,
+    createExercise,
   };
 });

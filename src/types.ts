@@ -22,5 +22,9 @@ export interface Exercise {
   id: string;
   name: string;
   description: string;
-  muscles: string[];
+  series: number;
+  reps: number;
+  rest: number;
+  weight: number;
+  focus: [string];
 }
