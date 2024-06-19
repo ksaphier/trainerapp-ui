@@ -60,10 +60,8 @@ export const useWorkoutStore = defineStore("workout", () => {
 
   async function deleteExerciseFromWorkout(id: number) {
     try {
-      const response = await axios.delete(
-        `${baseURL}/workouts/deleteExercise/${id}`
-      );
-      return response.data;
+      await axios.delete(`${baseURL}/workouts/deleteExercise/${id}`);
+      return true;
     } catch (error) {
       console.error(error);
     }

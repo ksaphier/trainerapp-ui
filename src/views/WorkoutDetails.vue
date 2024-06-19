@@ -77,7 +77,10 @@ const addExercise = async (values: any) => {
 
 const handleActions = async (exercise: any, info: any) => {
   if (info.key === "delete") {
-    await store.deleteExerciseFromWorkout(exercise.id);
+    const response = await store.deleteExerciseFromWorkout(exercise.id);
+    if (response) {
+      store.fetchWorkoutExercises(route.params.id as string);
+    }
   } else if (info.key === "edit") {
     console.log("edit", exercise);
   }
