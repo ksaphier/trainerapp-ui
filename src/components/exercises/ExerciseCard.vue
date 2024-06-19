@@ -1,37 +1,36 @@
 <template>
-  <a-card
-    hoverable
-    :bordered="false"
-    @click="activeKey = activeKey.includes('1') ? [] : ['1']"
-  >
-    <a-card-meta :title="title">
-      <template v-if="weight" #avatar>
-        <div class="weight-container">
-          <b class="weight">{{ weight }}</b> kg
-        </div>
-      </template>
-    </a-card-meta>
-    <a-collapse
-      v-model:activeKey="activeKey"
-      ghost
-      style="pointer-events: none; height: auto; min-height: min-content"
-    >
-      <a-collapse-panel key="1" :showArrow="false">
-        <p>
-          {{ description }}
-        </p>
-      </a-collapse-panel>
-    </a-collapse>
-    <template v-if="!!series || !!reps || !!rest" #actions>
-      <span
-        >Series: <b>{{ series }}</b></span
+  <a-card hoverable :bordered="false">
+    <div @click="activeKey = activeKey.includes('1') ? [] : ['1']">
+      <a-card-meta :title="title">
+        <template v-if="weight" #avatar>
+          <div class="weight-container">
+            <b class="weight">{{ weight }}</b> kg
+          </div>
+        </template>
+      </a-card-meta>
+      <a-collapse
+        v-model:activeKey="activeKey"
+        ghost
+        style="pointer-events: none; height: auto; min-height: min-content"
       >
-      <span
-        >Reps: <b>{{ reps }}</b></span
-      >
-      <span
-        >Rest: <b>{{ rest }} sec</b></span
-      >
+        <a-collapse-panel key="1" :showArrow="false">
+          <p>
+            {{ description }}
+          </p>
+        </a-collapse-panel>
+      </a-collapse>
+    </div>
+    <template #actions>
+      <slot></slot>
+      <span v-if="!!series">
+        Series: <b>{{ series }}</b>
+      </span>
+      <span v-if="!!reps">
+        Reps: <b>{{ reps }}</b>
+      </span>
+      <span v-if="!!rest">
+        Rest: <b>{{ rest }} sec</b>
+      </span>
     </template>
   </a-card>
 </template>

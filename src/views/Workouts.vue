@@ -9,13 +9,27 @@
       >
     </Navbar>
     <TransitionGroup name="list" tag="div">
-      <router-link
+      <WorkoutCard
         v-for="workout in workouts"
+        :title="workout.name"
+        :type="workout.type"
+        :id="workout.id"
         :key="workout.id"
-        :to="`/workout/${workout.id}`"
       >
-        <WorkoutCard :title="workout.name" :type="workout.type" />
-      </router-link>
+        <a-button
+          type="text"
+          shape="circle"
+          :icon="h(DeleteFilled)"
+          @click="() => deleteWorkout(workout.id)"
+          :loading="deleteLoader"
+        />
+        <a-button
+          type="text"
+          shape="circle"
+          :icon="h(EditFilled)"
+          @click="() => console.log('edit', workout)"
+        />
+      </WorkoutCard>
     </TransitionGroup>
     <NewWorkout :open="openNew" @close-modal="createNewWorkout" />
   </div>
@@ -27,7 +41,7 @@ import NewWorkout from "../components/workouts/NewWorkout.vue";
 import WorkoutCard from "../components/workouts/WorkoutCard.vue";
 import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted, ref, h } from "vue";
-import { PlusOutlined } from "@ant-design/icons-vue";
+import { PlusOutlined, DeleteFilled, EditFilled } from "@ant-design/icons-vue";
 import { useRouter } from "vue-router";
 const store = useWorkoutStore();
 
@@ -45,10 +59,18 @@ const router = useRouter();
 const createNewWorkout = async (values: any) => {
   if (values) {
     const response = await store.createWorkout(values);
-    console.log("new workout id:", response.id);
     router.push(`/workout/${response.id}`);
   }
   openNew.value = false;
+};
+
+const deleteLoader = ref(false);
+
+const deleteWorkout = async (id: number) => {
+  deleteLoader.value = true;
+  await store.deleteWorkout(id);
+  deleteLoader.value = false;
+  store.fetchWorkouts();
 };
 </script>
 <style scoped>

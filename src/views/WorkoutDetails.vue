@@ -5,8 +5,9 @@
         type="primary"
         :icon="h(PlusOutlined)"
         @click="() => (openAdd = true)"
-        >Add</a-button
       >
+        Add
+      </a-button>
     </Navbar>
     <p>{{ workout?.details.description }}</p>
     <TransitionGroup
@@ -23,7 +24,19 @@
         :reps="exercise.reps"
         :rest="exercise.rest"
         :weight="exercise.weight"
-      />
+      >
+        <a-dropdown>
+          <template #overlay>
+            <a-menu @click="(info: any) => handleActions(exercise, info)">
+              <a-menu-item key="delete">delete</a-menu-item>
+              <a-menu-item key="edit">edit</a-menu-item>
+            </a-menu>
+          </template>
+          <a-button type="text">
+            <EllipsisOutlined />
+          </a-button>
+        </a-dropdown>
+      </ExerciseCard>
     </TransitionGroup>
     <div v-else>
       <p style="display: flex; justify-content: center">No exercises found</p>
@@ -38,7 +51,7 @@ import { useWorkoutStore } from "../store/workoutStore";
 import { computed, onMounted, h, ref } from "vue";
 import ExerciseCard from "../components/exercises/ExerciseCard.vue";
 import AddExercise from "../components/exercises/AddExercise.vue";
-import { PlusOutlined } from "@ant-design/icons-vue";
+import { PlusOutlined, EllipsisOutlined } from "@ant-design/icons-vue";
 
 const route = useRoute();
 const store = useWorkoutStore();
@@ -60,6 +73,14 @@ const addExercise = async (values: any) => {
   }
   store.fetchWorkoutExercises(route.params.id as string);
   openAdd.value = false;
+};
+
+const handleActions = async (exercise: any, info: any) => {
+  if (info.key === "delete") {
+    await store.deleteExerciseFromWorkout(exercise.id);
+  } else if (info.key === "edit") {
+    console.log("edit", exercise);
+  }
 };
 </script>
 
@@ -83,5 +104,9 @@ p + div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.ant-card-actions {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

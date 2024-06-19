@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model:open="open" title="Create a new workout" @ok="submitForm">
+  <a-modal v-model:open="open" title="Create a new exercise" @ok="submitForm">
     <div style="display: flex; gap: 1rem; flex-direction: column">
       <a-form
         layout="vertical"

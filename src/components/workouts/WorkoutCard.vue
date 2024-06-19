@@ -1,18 +1,24 @@
 <template>
   <a-card hoverable :bordered="false">
-    <a-card-meta :title="title">
-      <template #avatar>
-        <PlayCircleOutlined v-if="type === 'standard'" />
-        <ClockCircleOutlined v-else />
-      </template>
-    </a-card-meta>
+    <router-link :to="`/workout/${id}`">
+      <a-card-meta :title="title">
+        <template #avatar>
+          <PlayCircleFilled v-if="type === 'standard'" />
+          <ClockCircleFilled v-else />
+        </template>
+      </a-card-meta>
+    </router-link>
+    <template #actions>
+      <slot></slot>
+    </template>
   </a-card>
 </template>
 
 <script setup lang="ts">
-import { PlayCircleOutlined, ClockCircleOutlined } from "@ant-design/icons-vue";
+import { PlayCircleFilled, ClockCircleFilled } from "@ant-design/icons-vue";
 
 defineProps({
+  id: { type: Number, default: 0 },
   title: { type: String, default: "Title" },
   description: { type: String, default: "" },
   type: { type: String, default: "standard" },
@@ -25,5 +31,6 @@ defineProps({
 }
 .anticon {
   font-size: 1.5rem;
+  color: var(--text-color);
 }
 </style>

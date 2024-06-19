@@ -158,7 +158,7 @@ const submitForm = () => {
 const store = useWorkoutStore();
 
 onMounted(() => {
-  store.fetchExercises();
+  if (open.value) store.fetchExercises();
 });
 
 const exercisesList = computed(() => store.exercises);

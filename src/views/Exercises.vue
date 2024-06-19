@@ -17,7 +17,22 @@
       :reps="exercise.reps"
       :rest="exercise.rest"
       :weight="exercise.weight"
-    />
+    >
+      <a-button
+        type="primary"
+        ghost
+        shape="circle"
+        :icon="h(DeleteFilled)"
+        @click="() => deleteExercise(exercise.id)"
+      />
+      <a-button
+        type="primary"
+        shape="circle"
+        ghost
+        :icon="h(EditFilled)"
+        @click="() => console.log('edit', exercise)"
+      />
+    </ExerciseCard>
   </TransitionGroup>
   <div v-else>
     <p style="display: flex; justify-content: center">No exercises found</p>
@@ -26,7 +41,7 @@
 </template>
 <script lang="ts" setup>
 import { h, onMounted, computed, ref } from "vue";
-import { PlusOutlined } from "@ant-design/icons-vue";
+import { PlusOutlined, DeleteFilled, EditFilled } from "@ant-design/icons-vue";
 
 import Navbar from "../components/global/Navbar.vue";
 import { useWorkoutStore } from "../store/workoutStore";
@@ -51,6 +66,11 @@ const newExercise = async (values: any) => {
   store.fetchExercises();
   openNew.value = false;
 };
+
+const deleteExercise = async (id: string) => {
+  await store.deleteExercise(id);
+  store.fetchExercises();
+};
 </script>
 <style scoped>
 .list-move,
@@ -73,10 +93,5 @@ const newExercise = async (values: any) => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 </style>

@@ -58,6 +58,17 @@ export const useWorkoutStore = defineStore("workout", () => {
     }
   }
 
+  async function deleteExerciseFromWorkout(id: number) {
+    try {
+      const response = await axios.delete(
+        `${baseURL}/workouts/deleteExercise/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async function fetchExercises() {
     try {
       const response = await axios.get(`${baseURL}/exercises`);
@@ -68,7 +79,6 @@ export const useWorkoutStore = defineStore("workout", () => {
     }
   }
 
-  // new exercise function
   async function createExercise(exercise: Exercise) {
     try {
       const response = await axios.post(`${baseURL}/exercises`, exercise, {
@@ -82,6 +92,25 @@ export const useWorkoutStore = defineStore("workout", () => {
     }
   }
 
+  async function deleteExercise(id: string) {
+    try {
+      const response = await axios.delete(`${baseURL}/exercises/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function deleteWorkout(id: number) {
+    try {
+      await axios.delete(`${baseURL}/workouts/${id}`);
+      return false;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }
+
   return {
     workouts,
     exercises,
@@ -92,5 +121,8 @@ export const useWorkoutStore = defineStore("workout", () => {
     addExerciseToWorkout,
     fetchExercises,
     createExercise,
+    deleteExercise,
+    deleteWorkout,
+    deleteExerciseFromWorkout,
   };
 });
