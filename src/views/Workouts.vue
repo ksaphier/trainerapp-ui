@@ -39,11 +39,12 @@
 import Navbar from "../components/global/Navbar.vue";
 import NewWorkout from "../components/workouts/NewWorkout.vue";
 import WorkoutCard from "../components/workouts/WorkoutCard.vue";
-import { useWorkoutStore } from "../store/workoutStore";
+import { useWorkoutsStore } from "../stores/workoutsStore";
 import { computed, onMounted, ref, h } from "vue";
 import { PlusOutlined, DeleteFilled, EditFilled } from "@ant-design/icons-vue";
 import { useRouter } from "vue-router";
-const store = useWorkoutStore();
+
+const store = useWorkoutsStore();
 
 onMounted(() => {
   store.fetchWorkouts();

@@ -47,17 +47,17 @@
 <script setup lang="ts">
 import Navbar from "../components/global/Navbar.vue";
 import { useRoute } from "vue-router";
-import { useWorkoutStore } from "../store/workoutStore";
+import { useWorkoutsStore } from "../stores/workoutsStore";
 import { computed, onMounted, h, ref } from "vue";
 import ExerciseCard from "../components/exercises/ExerciseCard.vue";
 import AddExercise from "../components/exercises/AddExercise.vue";
 import { PlusOutlined, EllipsisOutlined } from "@ant-design/icons-vue";
 
 const route = useRoute();
-const store = useWorkoutStore();
+const store = useWorkoutsStore();
 
 onMounted(() => {
-  store.fetchWorkoutExercises(route.params.id as string);
+  store.fetchWorkoutDetails(route.params.id as string);
 });
 
 const workout = computed(() => store.currentWorkout);
@@ -71,7 +71,7 @@ const addExercise = async (values: any) => {
       ...values,
     });
   }
-  store.fetchWorkoutExercises(route.params.id as string);
+  store.fetchWorkoutDetails(route.params.id as string);
   openAdd.value = false;
 };
 
@@ -79,7 +79,7 @@ const handleActions = async (exercise: any, info: any) => {
   if (info.key === "delete") {
     const response = await store.deleteExerciseFromWorkout(exercise.id);
     if (response) {
-      store.fetchWorkoutExercises(route.params.id as string);
+      store.fetchWorkoutDetails(route.params.id as string);
     }
   } else if (info.key === "edit") {
     console.log("edit", exercise);

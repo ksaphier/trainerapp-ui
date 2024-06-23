@@ -105,7 +105,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, reactive, ref, watch, onMounted } from "vue";
-import { useWorkoutStore } from "../../store/workoutStore";
+import { useExercisesStore } from "../../stores/exercisesStore";
 
 const props = defineProps({
   open: Boolean,
@@ -124,15 +124,7 @@ const handleOk = (values: any) => {
 
 const filters = ref<string>("any");
 
-interface FormState {
-  exerciseId: string;
-  series: number;
-  reps: number;
-  rest: number;
-  weight: number;
-}
-
-const formState = reactive<FormState>({
+const formState = reactive({
   exerciseId: "",
   series: 4,
   reps: 8,
@@ -155,7 +147,7 @@ const submitForm = () => {
   }
 };
 
-const store = useWorkoutStore();
+const store = useExercisesStore();
 
 onMounted(() => {
   if (open.value) store.fetchExercises();

@@ -10,6 +10,17 @@
       <template #overlay>
         <a-menu>
           <a-menu-item>
+            <a-button
+              shape="round"
+              size="large"
+              type="primary"
+              @click="authStore.logout"
+              style="width: 100%"
+            >
+              <LogoutOutlined style="font-size: x-large" />
+            </a-button>
+          </a-menu-item>
+          <a-menu-item>
             <ThemeToggler
               :activeTheme="activeTheme"
               :toggleTheme="toggleTheme"
@@ -44,8 +55,13 @@
 
 <script setup lang="ts">
 import { ref, inject } from "vue";
-import { MenuOutlined, MoreOutlined } from "@ant-design/icons-vue";
+import {
+  MenuOutlined,
+  MoreOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons-vue";
 import ThemeToggler from "./ThemeToggler.vue";
+import { useAuthStore } from "../../stores/authStore";
 
 const toggleTheme = inject("toggleTheme");
 const activeTheme = inject("activeTheme");
@@ -59,6 +75,8 @@ const handleVisibleChange = (val: boolean) => {
 const handleClick = (event: { preventDefault: () => void }) => {
   event.preventDefault();
 };
+
+const authStore = useAuthStore();
 </script>
 
 <style scoped>

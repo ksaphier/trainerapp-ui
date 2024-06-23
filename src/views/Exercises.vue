@@ -44,12 +44,12 @@ import { h, onMounted, computed, ref } from "vue";
 import { PlusOutlined, DeleteFilled, EditFilled } from "@ant-design/icons-vue";
 
 import Navbar from "../components/global/Navbar.vue";
-import { useWorkoutStore } from "../store/workoutStore";
+import { useExercisesStore } from "../stores/exercisesStore";
 
 import ExerciseCard from "../components/exercises/ExerciseCard.vue";
 import NewExercise from "../components/exercises/NewExercise.vue";
 
-const store = useWorkoutStore();
+const store = useExercisesStore();
 
 onMounted(() => {
   store.fetchExercises();
