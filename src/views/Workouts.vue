@@ -69,9 +69,11 @@ const deleteLoader = ref(false);
 
 const deleteWorkout = async (id: number) => {
   deleteLoader.value = true;
-  await store.deleteWorkout(id);
+  const response = await store.deleteWorkout(id);
   deleteLoader.value = false;
-  store.fetchWorkouts();
+  if (response) {
+    store.fetchWorkouts();
+  }
 };
 </script>
 <style scoped>

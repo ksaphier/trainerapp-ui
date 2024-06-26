@@ -67,7 +67,7 @@ export const useWorkoutsStore = defineStore("workouts", {
         console.error(error);
         return;
       }
-      return false;
+      return true;
     },
 
     async deleteWorkout(id: number) {
@@ -79,7 +79,7 @@ export const useWorkoutsStore = defineStore("workouts", {
         console.error(error);
         return;
       }
-      return false;
+      return true;
     },
   },
 });
